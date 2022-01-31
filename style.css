@@ -1,0 +1,96 @@
+:root {
+    --white: #f7f8fa;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.gallery-img {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 0.6rem;
+    border-radius: 8px;
+    background-color: green;
+}
+
+.btns {
+    display: flex;
+    margin-top: 2rem;
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding: 10px 30px;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.btn:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
+
+#slider {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+#slider .image {
+    grid-column: 1/6;
+}
+
+#slider .texts {
+    grid-column: 6/11;
+    order: 2;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text {
+    display: none;
+    text-align: left;
+    padding: 1rem;
+}
+
+.texts .active {
+    display: block;
+}
+
+@media screen and (max-width: 1050px) {
+    #slider .image {
+        grid-column: 1/11;
+        grid-row: 1/2;
+        width: 100%;
+    }
+    
+    #slider .texts {
+        grid-column: 1/11;
+        grid-row: 2/2;
+    }
+}
